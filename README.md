@@ -6,7 +6,7 @@ Here we have designed Meta-Sorter, a neural network and transfer learning enable
 <img src="https://github.com/HUST-NingKang-Lab/Meta-Sorter/blob/main/The%20rationale%20and%20applications%20of%20Meta-Sorter.png" style="zoom:150%;" />
 
 ``
-The transfer learning workflow of microbial-based cross-regional diagnosis of diseases: (1) Fundamental model establishment: ab initio train the disease neural network (DNN) model on the training set of city A. (2) Transfer model establishment: implement transfer learning to generate a transfer DNN for another city B by using the training set of city B. (3)Classification test: test the transfer DNN on the testing set of city B.
+The rationale and applications of Meta-Sorter. (A) The process of model construction and transfer learning of Meta-Sorter. Two input files, which are biome ontology and samples’ taxonomic structures with detailed biome information, are required in the process of model construction and transfer learning. The yellow box shows that the neural network model was constructed based on 118,592 existing samples with detailed information of 134 biomes and their biome ontology. The blue box shows that the transfer neural network model was constructed by using 34,209 newly introduced samples from 35 biomes (including 3,083 samples from 8 newly introduced biomes) and transfer learning to the existing neural network model. (B-E) The applications of Meta-Sorter. (B) Meta-Sorter decoded the samples’ biome labels which were annotated as “Mixed biome” into detailed biome labels. (C) Meta-sorter refined the biome labels more detailed to obtain more valuable information for reference. (D) Meta-Sorter corrected the mis-annotated samples’ labels to avoid “cascading accumulation”. (E) Further more application of Meta-Sorter.
 ``
 
 ## Get and use
@@ -15,5 +15,7 @@ To learn how to install the model and how to use it, click [here](https://github
 <img src="https://github.com/HUST-NingKang-Lab/Meta-Sorter/blob/main/The%20process%20of%20transfer%20learning.png" style="zoom:150%;" />
 
 ``
-The transfer learning workflow of microbial-based cross-regional diagnosis of diseases: (1) Fundamental model establishment: ab initio train the disease neural network (DNN) model on the training set of city A. (2) Transfer model establishment: implement transfer learning to generate a transfer DNN for another city B by using the training set of city B. (3)Classification test: test the transfer DNN on the testing set of city B.
+The process of transfer learning. Transfer learning could adapt an existing neural network model to newly introduced samples by implementing
+three steps: (1) transfer: retaining the layers which are might potentially suitable for newly introduced samples, and replacing the other layer; (2) adaptation: quickl updating the parameters of the replaced layers using iterative forward-backward propagation (3) fine-tuning: updating the parameters of retained layers until the parameters converge. Different colors of the modules’ background represent the layers
+are suitable for different datasets.
 ``
