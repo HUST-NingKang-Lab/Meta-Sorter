@@ -3,5 +3,17 @@ Microbiome samples are accumulating at a fast speed, leading to millions of acce
 
 Here we have designed Meta-Sorter, a neural network and transfer learning enabled AI method for improving the biome labeling of thousands of microbial community samples without detailed biome information. Meta-Sorter could decode the samples’ biome labels which were annotated as “Mixed biome” into detailed biome labels, refine the biome labels more detailed to obtain more valuable information for reference and corrected the mis-annotated samples’ labels to avoid “cascading accumulation”.
 
+<img src="https://github.com/HUST-NingKang-Lab/EXPERT-Disease-GGMP/blob/main/transfer%20learning.png" style="zoom:150%;" />
+
+``
+The transfer learning workflow of microbial-based cross-regional diagnosis of diseases: (1) Fundamental model establishment: ab initio train the disease neural network (DNN) model on the training set of city A. (2) Transfer model establishment: implement transfer learning to generate a transfer DNN for another city B by using the training set of city B. (3)Classification test: test the transfer DNN on the testing set of city B.
+``
+
 ## Get and use
 To learn how to install the model and how to use it, click [here](https://github.com/HUST-NingKang-Lab/EXPERT)
+
+<img src="https://github.com/HUST-NingKang-Lab/EXPERT-Disease-GGMP/blob/main/transfer%20learning.png" style="zoom:150%;" />
+
+``
+The transfer learning workflow of microbial-based cross-regional diagnosis of diseases: (1) Fundamental model establishment: ab initio train the disease neural network (DNN) model on the training set of city A. (2) Transfer model establishment: implement transfer learning to generate a transfer DNN for another city B by using the training set of city B. (3)Classification test: test the transfer DNN on the testing set of city B.
+``
