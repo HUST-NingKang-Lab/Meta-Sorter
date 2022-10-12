@@ -19,3 +19,8 @@ The process of transfer learning. Transfer learning could adapt an existing neur
 three steps: (1) transfer: retaining the layers which are might potentially suitable for newly introduced samples, and replacing the other layer; (2) adaptation: quickl updating the parameters of the replaced layers using iterative forward-backward propagation (3) fine-tuning: updating the parameters of retained layers until the parameters converge. Different colors of the modules’ background represent the layers
 are suitable for different datasets.
 ``
+
+## Pre-trained models access
+To get the **neural network model** constructed based on 118,592 existing samples with detailed information of 134 biomes and their biome ontology, please click [here]()   
+
+To get the **transfer neural network model** constructed by using 34,209 newly introduced samples from 35 biomes (including 3,083 samples from 8 newly introduced biomes) and transfer learning to the existing neural network model, please click [here]()
