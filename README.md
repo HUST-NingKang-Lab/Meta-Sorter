@@ -3,3 +3,5 @@ Microbiome samples are accumulating at a fast speed, leading to millions of acce
 
 Here we have designed Meta-Sorter, a neural network and transfer learning enabled AI method for improving the biome labeling of thousands of microbial community samples without detailed biome information. Meta-Sorter could decode the samples’ biome labels which were annotated as “Mixed biome” into detailed biome labels, refine the biome labels more detailed to obtain more valuable information for reference and corrected the mis-annotated samples’ labels to avoid “cascading accumulation”.
 
+## Get and use
+To learn how to install the model and how to use it, click [here](https://github.com/HUST-NingKang-Lab/EXPERT)
