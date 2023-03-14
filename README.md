@@ -10,8 +10,7 @@ The rationale and applications of Meta-Sorter. (A) The process of model construc
 ``
 
 ## Get and use
-Meta-Sorter accesses technical support of EXPERT ([get and use](https://github.com/HUST-NingKang-Lab/EXPERT)), which is a scalable community-level microbial source tracking approach. Built upon the biome ontology information and transfer learning techniques, EXPERT has acquired the context-aware flexibility and could easily expand the supervised model's search scope to include the context-depende/nt community samples and understudied biomes.
-To learn how to install the model and how to use it, click [here](https://github.com/HUST-NingKang-Lab/EXPERT)
+Meta-Sorter accesses technical support of EXPERT ([get and use](https://github.com/HUST-NingKang-Lab/EXPERT)), which is a scalable community-level microbial source tracking approach. Built upon the biome ontology information and transfer learning techniques, EXPERT has acquired the context-aware flexibility and could easily expand the supervised model's search scope to include the context-depende/nt community samples and understudied biomes. [See the original study](https://academic.oup.com/bib/article/23/6/bbac396/6702669)
 
 <img src="https://github.com/HUST-NingKang-Lab/Meta-Sorter/blob/main/The%20process%20of%20transfer%20learning.png" style="zoom:150%;" />
 
