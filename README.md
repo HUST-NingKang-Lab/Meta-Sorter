@@ -34,6 +34,7 @@ Meta-Sorter accesses technical support of EXPERT. You can simply install EXPERT 
 pip install expert-mst    # Install EXPERT
 expert init               # Initialize EXPERT and install NCBI taxonomy database
 ```
+
 ### Model download
 - Downloading the neural network model
 ```
@@ -43,8 +44,24 @@ mv Neural\ Network\ model neural-network-model
 ```
 - Downloading the transfer neural network model
 ```
-wget 
+wget https://github.com/HUST-NingKang-Lab/Meta-Sorter/releases/download/TNNv1.0/Transfer.Neural.Network.model.zip
+unzip Transfer.Neural.Network.model.zip
+mv Transfer\ Neural\ Network\ model transfer-neural-network-model
 ```
+
+### Predict the source environment
+- You can use the neural network model or the transfer neural network model to predict the potential collecting sources of the microbial community samples.
+- We presented an instance of samples from an study that was annotated as "Mixed biome" in MGnify (study id: MGYS00002446). The format of each input file can be known by viewing the file content.
+
+##### Convert input abundance data to model-acceptable hdf file
+```
+expert convert -t XXX -o XXXX --in-cm
+```
+##### Predict by using the neural network model
+```
+expert search -i XXX -m neural-network-model -o Search_NN
+```
+- You can view the Search_NN file to get the prediction results of each sample.
 
 #### Ontology construct
 - Construct a biome ontology representing stages of T2D. You'll see constructed ontology like a tree in the printed message.
