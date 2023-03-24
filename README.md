@@ -26,6 +26,16 @@ To get the **neural network model** constructed based on 118,592 existing sample
 To get the **transfer neural network model** constructed by using 34,209 newly introduced samples from 35 biomes (including 3,083 samples from 8 newly introduced biomes) and transfer learning to the existing neural network model, please click [here](https://github.com/HUST-NingKang-Lab/Meta-Sorter/releases/tag/TNNv1.0)
 
 ## Using Meta-Sorter Now
+### Installation
+
+Meta-Sorter accesses technical support of EXPERT. You can simply install EXPERT using `pip` package manager.
+
+```bash
+pip install expert-mst    # Install EXPERT
+expert init               # Initialize EXPERT and install NCBI taxonomy database
+```
+#### Downloading the neural network model or transfer neural network model
+
 #### Ontology construct
 - Construct a biome ontology representing stages of T2D. You'll see constructed ontology like a tree in the printed message.
 ```
