@@ -25,4 +25,45 @@ To get the **neural network model** constructed based on 118,592 existing sample
 
 To get the **transfer neural network model** constructed by using 34,209 newly introduced samples from 35 biomes (including 3,083 samples from 8 newly introduced biomes) and transfer learning to the existing neural network model, please click [here](https://github.com/HUST-NingKang-Lab/Meta-Sorter/releases/tag/TNNv1.0)
 
-## 
+## Using Meta-Sorter Now
+#### Ontology construct
+- Construct a biome ontology representing stages of T2D. You'll see constructed ontology like a tree in the printed message.
+```
+expert construct -i biome.tsv -o ontology.pkl
+```
+#### Source mapping
+- Map microbial community samples to the biome ontology to obtain hierarchical labels. You'll see counts of the samples on each biome ontology layer in the printed message.
+```
+expert map --to-otlg -i city1_train_mapper.csv -t ontology.pkl -o city1_train_labels.h5
+expert map --to-otlg -i city1_test_mapper.csv -t ontology.pkl -o city1_test_labels.h5
+expert map --to-otlg -i city2_train_mapper.csv -t ontology.pkl -o city2_train_labels.h5
+expert map --to-otlg -i city2_test_mapper.csv -t ontology.pkl -o city2_test_labels.h5
+```
+#### Data convert
+- Convert input abundance data to model-acceptable hdf file. The EXPERT model only accepts standardized abundance data. Here we standardize the abundance data using convert mode.
+```
+ls city1_train.tsv > inputlist; expert convert -i inputlist -o city1_trainCM.h5 --in-cm;
+ls city1_test.tsv > inputlist; expert convert -i inputlist -o city1_testCM.h5 --in-cm;
+ls city2_train.tsv > inputlist; expert convert -i inputlist -o city2_trainCM.h5 --in-cm;
+ls city2_test.tsv > inputlist; expert convert -i inputlist -o city2_testCM.h5 --in-cm;
+```
+#### Ab initio training
+- Train the disease neural network model from scratch. Here we will use ontology.pkl and hdf files.
+```
+expert train -i city1_trainCM.h5 -l city1_train_labels.h5 -t ontology.pkl -o city1_DNN
+```
+#### Transfer learning
+- Transfer the knowledge of city B to the DNN model of city A for better performance in disease diagnosis on city B. You'll see running log and training process in the printed message.
+```
+expert transfer -i city2_trainCM.h5 -l city2_train_labels.h5 -t ontology.pkl -m  city1_DNN -o Transfer_DNN
+```
+#### Search
+- Search the test set of city B against the transferred DNN model.
+```
+expert search -i city2_testCM.h5 -m Transfer_DNN -o Search_Transfer_DNN
+```
+#### Evaluation
+- Evaluate the performance of the Transferred DNN model. You'll obtain a performance report.
+```
+expert evaluate -i Search_Transfer_DNN -l city2_test_labels.h5 -o Evaluation
+```
