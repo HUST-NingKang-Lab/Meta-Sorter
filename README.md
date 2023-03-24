@@ -59,11 +59,11 @@ mkdir datafile
 cd datafile
 wget https://github.com/HUST-NingKang-Lab/Meta-Sorter/blob/main/datafile/SRP071862_taxonomy_abundances_SSU_v4.1.tsv
 wget https://github.com/HUST-NingKang-Lab/Meta-Sorter/blob/main/datafile/path_SRP071862.tsv
-expert convert -t XXX -o XXXX --in-cm
+expert convert -t XXX -o path_SRP071862.tsv --in-cm
 ```
 ##### Predict by using the neural network model
 ```
-expert search -i XXX -m neural-network-model -o Search_NN
+expert search -i path_SRP071862.tsv -m neural-network-model -o Search_NN
 ```
 - You can view the Search_NN file to get the prediction results of each sample.
 
