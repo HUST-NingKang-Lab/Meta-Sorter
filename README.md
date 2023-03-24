@@ -55,6 +55,10 @@ mv Transfer\ Neural\ Network\ model transfer-neural-network-model
 
 ##### Convert input abundance data to model-acceptable hdf file
 ```
+mkdir datafile
+cd datafile
+wget https://github.com/HUST-NingKang-Lab/Meta-Sorter/blob/main/datafile/SRP071862_taxonomy_abundances_SSU_v4.1.tsv
+wget https://github.com/HUST-NingKang-Lab/Meta-Sorter/blob/main/datafile/path_SRP071862.tsv
 expert convert -t XXX -o XXXX --in-cm
 ```
 ##### Predict by using the neural network model
