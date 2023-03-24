@@ -35,9 +35,11 @@ pip install expert-mst    # Install EXPERT
 expert init               # Initialize EXPERT and install NCBI taxonomy database
 ```
 ### Model downloading
-#### Downloading the neural network model
+- Downloading the neural network model
 
-#### Downloading the transfer neural network model
+
+
+- Downloading the transfer neural network model
 
 #### Ontology construct
 - Construct a biome ontology representing stages of T2D. You'll see constructed ontology like a tree in the printed message.
