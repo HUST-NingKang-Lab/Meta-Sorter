@@ -34,7 +34,10 @@ Meta-Sorter accesses technical support of EXPERT. You can simply install EXPERT 
 pip install expert-mst    # Install EXPERT
 expert init               # Initialize EXPERT and install NCBI taxonomy database
 ```
-#### Downloading the neural network model or transfer neural network model
+### Model downloading
+#### Downloading the neural network model
+
+#### Downloading the transfer neural network model
 
 #### Ontology construct
 - Construct a biome ontology representing stages of T2D. You'll see constructed ontology like a tree in the printed message.
